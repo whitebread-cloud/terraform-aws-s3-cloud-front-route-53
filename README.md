@@ -32,7 +32,7 @@ minimum variables necessary.
 
 ```
 module "wc3_swagger" {
-  source = "./modules/swagger"
+  source = "github.com/whitebread-cloud/terraform-aws-s3-cloud-front-route-53"
 
   hostname            = local.wc3_swagger_hostname
   route_53_zone_name  = local.blizzard_quotes_hostname
