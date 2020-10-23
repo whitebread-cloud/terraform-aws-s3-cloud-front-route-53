@@ -12,7 +12,7 @@ resource "aws_cloudfront_distribution" "web" {
     }
   }
 
-  aliases = ["${var.hostname}"]
+  aliases = [var.hostname]
 
   enabled             = true
   is_ipv6_enabled     = true
