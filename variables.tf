@@ -3,6 +3,12 @@ variable "hostname" {
   description = "Hostname for the web ui"
 }
 
+variable "alt_hostnames" {
+  type = list(string)
+  default = []
+  description = "Alternative hostnames for the web ui"
+}
+
 variable "route_53_zone_name" {
   type        = string
   description = "Route 53 zone name"

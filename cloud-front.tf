@@ -1,3 +1,7 @@
+locals {
+  aliases = concat([var.hostname], var.alt_hostnames)
+}
+
 resource "aws_cloudfront_origin_access_identity" "web" {
   comment = "Origin Access Identity for ${var.hostname}"
 }
@@ -12,7 +16,7 @@ resource "aws_cloudfront_distribution" "web" {
     }
   }
 
-  aliases = [var.hostname]
+  aliases = local.aliases
 
   enabled             = true
   is_ipv6_enabled     = true
